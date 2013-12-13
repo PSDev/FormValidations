@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Formvalidations : FormValidations is an open source library to validate forms in Android apps." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Formvalidations</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/PSDev/FormValidations">View on GitHub</a>
+
+          <h1 id="project_title">Formvalidations</h1>
+          <h2 id="project_tagline">FormValidations is an open source library to validate forms in Android apps.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/PSDev/FormValidations/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/PSDev/FormValidations/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="formvalidations" class="anchor" href="#formvalidations"><span class="octicon octicon-link"></span></a>FormValidations</h1>
+
+<p>FormValidations is an open source library to validate forms in Android apps.</p>
+
+<h2>
+<a name="available-validations" class="anchor" href="#available-validations"><span class="octicon octicon-link"></span></a>Available validations</h2>
+
+<ul>
+<li>AlphaNumeric - checks if a fields value only contains alpha-numeric characters</li>
+<li>InRange - checks if a fields value is an integer and in a given range (<code>min &lt; value &lt; max</code>)</li>
+<li>IsEmail - checks if a fields value is a valid email</li>
+<li>IsNumber - checks if a felds value is a number</li>
+<li>IsPositiveInteger - checks if fields value is an integer and greater than zero (<code>value &gt; 0</code>)</li>
+<li>Length - checks if a fields value is a given length (min, max or both)</li>
+<li>NotEmpty - checks if field is not blank</li>
+</ul><p>You can easily create your own validations, just implement the <code>de.psdev.formvalidations.validations.Validation</code> interface.</p>
+
+<h2>
+<a name="error-handlers" class="anchor" href="#error-handlers"><span class="octicon octicon-link"></span></a>Error handlers</h2>
+
+<ul>
+<li>
+<code>EditTextErrorHandler</code> - displays the validation error on the <code>EditText</code> using the <code>setError</code> method</li>
+</ul><p>You can easily create your own error handlers, just implement the <code>de.psdev.formvalidations.FormErrorHandler</code> interface.</p>
+
+<h2>
+<a name="sample-usage" class="anchor" href="#sample-usage"><span class="octicon octicon-link"></span></a>Sample usage</h2>
+
+<p>Create validation form and add some validations</p>
+
+<div class="highlight highlight-java"><pre>    <span class="kd">final</span> <span class="n">Form</span> <span class="n">mForm</span> <span class="o">=</span> <span class="n">Form</span><span class="o">.</span><span class="na">with</span><span class="o">(</span><span class="n">mActivity</span><span class="o">);</span>
+    <span class="n">mForm</span><span class="o">.</span><span class="na">addField</span><span class="o">(</span><span class="n">Field</span><span class="o">.</span><span class="na">using</span><span class="o">(</span><span class="n">mNameEditText</span><span class="o">).</span><span class="na">validate</span><span class="o">(</span><span class="n">NotEmpty</span><span class="o">.</span><span class="na">build</span><span class="o">()));</span>
+    <span class="n">mForm</span><span class="o">.</span><span class="na">addField</span><span class="o">(</span><span class="n">Field</span><span class="o">.</span><span class="na">using</span><span class="o">(</span><span class="n">mEmailEditText</span><span class="o">).</span><span class="na">validate</span><span class="o">(</span><span class="n">NotEmpty</span><span class="o">.</span><span class="na">build</span><span class="o">()).</span><span class="na">validate</span><span class="o">(</span><span class="n">IsEmail</span><span class="o">.</span><span class="na">build</span><span class="o">()));</span>
+    <span class="n">mForm</span><span class="o">.</span><span class="na">addField</span><span class="o">(</span><span class="n">Field</span><span class="o">.</span><span class="na">using</span><span class="o">(</span><span class="n">mAgeEditText</span><span class="o">).</span><span class="na">validate</span><span class="o">(</span><span class="n">InRange</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">120</span><span class="o">)));</span>
+    <span class="n">mForm</span><span class="o">.</span><span class="na">errorHandler</span><span class="o">(</span><span class="k">new</span> <span class="n">EditTextErrorHandler</span><span class="o">());</span>
+</pre></div>
+
+<p>Check if form is valid</p>
+
+<div class="highlight highlight-java"><pre>    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">submit</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">mForm</span><span class="o">.</span><span class="na">isValid</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"Form is valid"</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+
+<p>Checkout sample project for full usage example.</p>
+
+<h2>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<p>Download <a href="https://github.com/PSDev/FormValidations/releases">the latest Release</a> or grab via Maven:</p>
+
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>de.psdev.formvalidations<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>formvalidations<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;type&gt;</span>apklib<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+<h2>
+<a name="sample" class="anchor" href="#sample"><span class="octicon octicon-link"></span></a>Sample</h2>
+
+<p>You can get the latest sample from <a href="https://ci.psdev.de/job/PSDevFormValidations/lastSuccessfulBuild/artifact/sample/target/">Jenkins</a></p>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>This library is based on <a href="https://github.com/zasadnyy/z-validations">z-validations</a> by <a href="http://about.me/vitaliy.zasadnyy">Vitaliy Zasadnyy</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<pre><code>Copyright 2013 Philip Schiffer
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+This library incorporates code covered by the following terms:
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Vitaliy Zasadnyy
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Formvalidations maintained by <a href="https://github.com/PSDev">PSDev</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-74654-28");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
