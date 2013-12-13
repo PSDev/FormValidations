@@ -1,0 +1,28 @@
+# Intellij #
+############
+.idea
+*.iml
+
+# Eclipse #
+###########
+.settings
+.project
+.classpath
+
+# Build Output #
+################
+target
+bin
+
+# Android #
+###########
+gen
+
+# MacOsX #
+##########
+.DS_Store
+
+# Other #
+#########
+.~lock*
+tmp

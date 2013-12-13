@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <groupId>de.psdev.formvalidations</groupId>
+    <artifactId>formvalidations-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>FormValidations</name>
+    <description>FormValidations is an open source library to validate forms in Android apps.</description>
+    <url>http://psdev.de/FormValidations</url>
+    <inceptionYear>2013</inceptionYear>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>library</module>
+        <module>sample</module>
+    </modules>
+
+    <scm>
+        <url>https://github.com/PSDev/FormValidations</url>
+        <connection>scm:git:git://github.com/PSDev/FormValidations.git</connection>
+        <developerConnection>scm:git:git@github.com:PSDev/FormValidations.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Philip Schiffer</name>
+            <email>philip.schiffer@gmail.com</email>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>PSDev</name>
+        <url>http://psdev.de</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/PSDev/FormValidations/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/PSDev/FormValidations</url>
+    </ciManagement>
+
+    <properties>
+        <!-- Project Properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.6</java.version>
+        <android.sdk.platform>16</android.sdk.platform>
+
+        <!-- Dependency Versions -->
+        <junit.version>4.11</junit.version>
+        <android.version>4.1.1.4</android.version>
+        <support-v4.version>r7</support-v4.version>
+        <crouton.version>1.8.1</crouton.version>
+        <jsr305.version>2.0.2</jsr305.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+
+        <!-- Plugin Versions -->
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <android-maven-plugin.version>3.8.1</android-maven-plugin.version>
+        <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+        <maven-release-plugin.version>2.4.2</maven-release-plugin.version>
+        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Testing -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Android -->
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>support-v4</artifactId>
+                <version>${support-v4.version}</version>
+            </dependency>
+
+            <!-- Nullable -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${jsr305.version}</version>
+            </dependency>
+
+            <!-- ButterKnife View Injection-->
+            <dependency>
+                <groupId>com.jakewharton</groupId>
+                <artifactId>butterknife</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+
+            <!-- Logging -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin.version}</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>${android-maven-plugin.version}</version>
+                    <configuration>
+                        <sdk>
+                            <platform>${android.sdk.platform}</platform>
+                        </sdk>
+                        <lintEnableLibraries>true</lintEnableLibraries>
+                        <lintFailOnError>false</lintFailOnError>
+                        <lintEnableHtml>true</lintEnableHtml>
+                        <lintConfig>${project.basedir}/lint.xml</lintConfig>
+                        <lintSkip>false</lintSkip>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${build-helper-maven-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
