@@ -1,5 +1,5 @@
-FormValidations
-================
+FormValidations [![Build Status](http://ci.psdev.de/job/PSDevFormValidations/badge/icon)](http://ci.psdev.de/job/PSDevFormValidations/)
+===============
 
 FormValidations is an open source library to validate forms in Android apps.
 
