@@ -27,20 +27,20 @@ Sample usage
 
 Create validation form and add some validations
 ```java
-    final Form mForm = Form.with(mActivity);
-    mForm.addField(Field.using(mNameEditText).validate(NotEmpty.build()));
-    mForm.addField(Field.using(mEmailEditText).validate(NotEmpty.build()).validate(IsEmail.build()));
-    mForm.addField(Field.using(mAgeEditText).validate(InRange.build(0, 120)));
-    mForm.errorHandler(new EditTextErrorHandler());
+final Form mForm = Form.with(mActivity);
+mForm.addField(Field.using(mNameEditText).validate(NotEmpty.build()));
+mForm.addField(Field.using(mEmailEditText).validate(NotEmpty.build()).validate(IsEmail.build()));
+mForm.addField(Field.using(mAgeEditText).validate(InRange.build(0, 120)));
+mForm.errorHandler(new EditTextErrorHandler());
 ```
 
 Check if form is valid
 ```java
-    private void submit() {
-        if (mForm.isValid()) {
-            Toast.makeText(this, "Form is valid", Toast.LENGTH_SHORT).show();
-        }
+private void submit() {
+    if (mForm.isValid()) {
+        Toast.makeText(this, "Form is valid", Toast.LENGTH_SHORT).show();
     }
+}
 ```
 
 Checkout sample project for full usage example.
