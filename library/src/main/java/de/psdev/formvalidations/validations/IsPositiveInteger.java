@@ -42,7 +42,7 @@ package de.psdev.formvalidations.validations;
 import android.content.Context;
 import de.psdev.formvalidations.R;
 
-public class IsPositiveInteger extends BaseValidation {
+public class IsPositiveInteger implements Validation {
 
     public static final String POSITIVE_INT_PATTERN = "\\d+";
 

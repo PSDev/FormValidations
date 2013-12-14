@@ -14,23 +14,21 @@
  *     limitations under the License.
  */
 
-package de.psdev.formvalidations;
+package de.psdev.formvalidations.validations;
 
-import android.widget.EditText;
+import android.app.Activity;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
-import javax.annotation.Nonnull;
+@RunWith(RobolectricTestRunner.class)
+public abstract class BaseValidationTest {
 
-public class EditTextErrorHandler implements FormErrorHandler {
+    protected Activity mActivity;
 
-    @Override
-    public void handleError(@Nonnull final FieldValidationException e) {
-        final EditText textView = e.getTextView();
-        final String message = e.getMessage();
-        textView.setError(message);
-    }
-
-    @Override
-    public void resetError(@Nonnull final Field field) {
-        field.getEditText().setError(null);
+    @Before
+    public void setUpActivity() throws Exception {
+        mActivity = Robolectric.buildActivity(Activity.class).create().get();
     }
 }

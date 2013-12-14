@@ -44,7 +44,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import de.psdev.formvalidations.R;
 
-public class NotEmpty extends BaseValidation {
+public class NotEmpty implements Validation {
 
     public static Validation build() {
         return new NotEmpty();

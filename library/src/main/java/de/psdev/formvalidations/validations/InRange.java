@@ -43,7 +43,7 @@ package de.psdev.formvalidations.validations;
 import android.content.Context;
 import de.psdev.formvalidations.R;
 
-public class InRange extends BaseValidation {
+public class InRange implements Validation {
 
     private final int mMin;
     private final int mMax;

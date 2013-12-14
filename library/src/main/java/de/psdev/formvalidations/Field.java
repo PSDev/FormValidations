@@ -51,8 +51,8 @@ public class Field {
     private final EditText mEditText;
     private final List<Validation> mValidations;
 
-    public static Field using(final EditText textView) {
-        return new Field(textView);
+    public static Field using(final EditText editText) {
+        return new Field(editText);
     }
 
     private Field(final EditText editText) {

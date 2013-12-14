@@ -43,30 +43,30 @@ package de.psdev.formvalidations.validations;
 import android.content.Context;
 import de.psdev.formvalidations.R;
 
-public class Length extends BaseValidation {
+public class Length implements Validation {
 
     private final int mMinLength;
     private final int mMaxLength;
 
     public static Validation min(final int minLength) {
-        if(minLength <= 0) {
+        if (minLength <= 0) {
             throw new IllegalArgumentException("minLength must be positive");
         }
         return new Length(minLength, -1);
     }
 
     public static Validation max(final int maxLength) {
-        if(maxLength <= 0) {
+        if (maxLength <= 0) {
             throw new IllegalArgumentException("maxLength must be positive");
         }
         return new Length(-1, maxLength);
     }
 
     public static Validation range(final int minLength, final int maxLength) {
-        if(minLength <= 0) {
+        if (minLength <= 0) {
             throw new IllegalArgumentException("minLength must be positive");
         }
-        if(maxLength <= 0) {
+        if (maxLength <= 0) {
             throw new IllegalArgumentException("maxLength must be positive");
         }
         return new Length(minLength, maxLength);
@@ -83,27 +83,21 @@ public class Length extends BaseValidation {
             return context.getString(R.string.formvalidations_length_range, mMinLength, mMaxLength);
         } else if (mMinLength == -1 && mMaxLength != -1) {
             return context.getString(R.string.formvalidations_length_max, mMaxLength);
-        } else if (mMinLength != -1) {
-            return context.getString(R.string.formvalidations_length_min, mMinLength);
-        } else {
-            throw new IllegalStateException("Cannot happen");
         }
+        return context.getString(R.string.formvalidations_length_min, mMinLength);
     }
 
     @Override
     public boolean isValid(final String text) {
-        if(text == null) {
+        if (text == null) {
             return false;
         }
-        if(mMinLength > 0 && mMaxLength > 0) {
-            return text.length() > mMinLength && text.length() < mMaxLength;
+        if (mMinLength > 0 && mMaxLength > 0) {
+            return text.length() >= mMinLength && text.length() <= mMaxLength;
         }
-        if(mMinLength > 0 && mMaxLength < 0) {
-            return text.length() > mMinLength;
+        if (mMinLength > 0 && mMaxLength < 0) {
+            return text.length() >= mMinLength;
         }
-        if(mMinLength < 0 && mMaxLength > 0) {
-            return text.length() < mMaxLength;
-        }
-        return false;
+        return text.length() <= mMaxLength;
     }
 }

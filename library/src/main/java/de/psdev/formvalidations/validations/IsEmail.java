@@ -43,7 +43,7 @@ import android.content.Context;
 import android.util.Patterns;
 import de.psdev.formvalidations.R;
 
-public class IsEmail extends BaseValidation {
+public class IsEmail implements Validation {
 
     private IsEmail() {
     }

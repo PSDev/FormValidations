@@ -19,7 +19,7 @@ package de.psdev.formvalidations;
 import javax.annotation.Nonnull;
 
 public interface FormErrorHandler {
-    void handleError(@Nonnull final FieldValidationException errorMessage);
+    void handleError(@Nonnull final FieldValidationException e);
 
     void resetError(@Nonnull final Field field);
 }

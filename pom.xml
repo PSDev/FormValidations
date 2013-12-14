@@ -69,6 +69,7 @@
         <android.sdk.platform>16</android.sdk.platform>
 
         <!-- Dependency Versions -->
+        <robolectric.version>2.2</robolectric.version>
         <junit.version>4.11</junit.version>
         <android.version>4.1.1.4</android.version>
         <support-v4.version>r7</support-v4.version>
@@ -89,6 +90,11 @@
     <dependencyManagement>
         <dependencies>
             <!-- Testing -->
+            <dependency>
+                <groupId>org.robolectric</groupId>
+                <artifactId>robolectric</artifactId>
+                <version>${robolectric.version}</version>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -128,6 +134,7 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>
