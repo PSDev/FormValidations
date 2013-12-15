@@ -34,7 +34,7 @@ mForm.addField(Field.using(mAgeEditText).validate(InRange.build(0, 120)));
 mForm.errorHandler(new EditTextErrorHandler());
 ```
 
-Check if form is valid
+Check if the form is valid
 ```java
 private void submit() {
     if (mForm.isValid()) {
@@ -43,7 +43,7 @@ private void submit() {
 }
 ```
 
-Checkout sample project for full usage example.
+Checkout the sample project for the full usage example.
 
 Download
 --------
