@@ -54,7 +54,7 @@ Download [the latest Release][1] or grab via Maven:
 <dependency>
   <groupId>de.psdev.formvalidations</groupId>
   <artifactId>formvalidations</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>apklib</type>
 </dependency>
 ```
