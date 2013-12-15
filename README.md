@@ -27,7 +27,7 @@ Sample usage
 
 Create validation form and add some validations
 ```java
-final Form mForm = Form.with(mActivity);
+final Form mForm = Form.create();
 mForm.addField(Field.using(mNameEditText).validate(NotEmpty.build()));
 mForm.addField(Field.using(mEmailEditText).validate(NotEmpty.build()).validate(IsEmail.build()));
 mForm.addField(Field.using(mAgeEditText).validate(InRange.build(0, 120)));

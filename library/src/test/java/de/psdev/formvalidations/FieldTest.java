@@ -16,18 +16,19 @@
 
 package de.psdev.formvalidations;
 
-import android.app.Activity;
-import android.widget.EditText;
-import de.psdev.formvalidations.validations.NotEmpty;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import android.app.Activity;
+import android.widget.EditText;
+import de.psdev.formvalidations.validations.NotEmpty;
 
 @RunWith(RobolectricTestRunner.class)
 public class FieldTest {
@@ -37,6 +38,11 @@ public class FieldTest {
     @Before
     public void setUp() throws Exception {
         mActivity = Robolectric.buildActivity(Activity.class).create().get();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testInvalidFieldCreationResultsInException() throws Exception {
+        Field.using(null);
     }
 
     @Test(expected = FieldValidationException.class)

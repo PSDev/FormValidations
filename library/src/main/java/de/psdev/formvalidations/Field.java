@@ -52,6 +52,9 @@ public class Field {
     private final List<Validation> mValidations;
 
     public static Field using(final EditText editText) {
+        if(editText == null) {
+            throw new IllegalArgumentException("EditText field may not be null");
+        }
         return new Field(editText);
     }
 

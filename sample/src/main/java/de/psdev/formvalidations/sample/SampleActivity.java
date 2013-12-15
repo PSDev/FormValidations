@@ -112,7 +112,7 @@ public class SampleActivity extends Activity {
     }
 
     private void initValidationForm() {
-        mForm = Form.with(this);
+        mForm = Form.create();
         mForm.addField(Field.using(mName).validate(NotEmpty.build()));
         mForm.addField(Field.using(mEmail).validate(NotEmpty.build()).validate(IsEmail.build()));
         mForm.addField(Field.using(mAge).validate(InRange.build(0, 120)));

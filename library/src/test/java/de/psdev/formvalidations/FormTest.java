@@ -40,7 +40,7 @@ public class FormTest {
     @Before
     public void setUp() throws Exception {
         mActivity = Robolectric.buildActivity(Activity.class).create().get();
-        mForm = Form.with(mActivity);
+        mForm = Form.create();
     }
 
     @Test

@@ -39,26 +39,24 @@
 
 package de.psdev.formvalidations;
 
-import android.content.Context;
-import android.widget.EditText;
-
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
+import android.widget.EditText;
+
 public class Form {
 
-    private final Context mContext;
     private final List<Field> mFields;
     @Nullable
     private FormErrorHandler mHandler;
 
-    public static Form with(final Context context) {
-        return new Form(context);
+    public static Form create() {
+        return new Form();
     }
 
-    private Form(final Context activity) {
-        mContext = activity;
+    private Form() {
         mFields = new ArrayList<Field>();
     }
 
@@ -85,7 +83,7 @@ public class Form {
             textView.requestFocus();
             textView.selectAll();
 
-            FormUtils.showKeyboard(mContext, textView);
+            FormUtils.showKeyboard(textView.getContext(), textView);
 
 
             showErrorMessage(e);
