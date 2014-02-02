@@ -54,9 +54,13 @@ Download [the latest Release][1] or grab via Maven:
 <dependency>
   <groupId>de.psdev.formvalidations</groupId>
   <artifactId>formvalidations</artifactId>
-  <version>1.0.1</version>
-  <type>apklib</type>
+  <version>1.1.0</version>
+  <type>aar</type>
 </dependency>
+```
+or Gradle:
+```groovy
+compile 'de.psdev.formvalidations:formvalidations:1.1.0@aar'
 ```
 
 Sample
