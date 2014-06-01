@@ -16,7 +16,7 @@
     <description>FormValidations is an open source library to validate forms in Android apps.</description>
     <url>http://psdev.de/FormValidations</url>
     <inceptionYear>2013</inceptionYear>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.1</version>
 
     <modules>
         <module>library</module>
@@ -27,7 +27,7 @@
         <url>https://github.com/PSDev/FormValidations</url>
         <connection>scm:git:git://github.com/PSDev/FormValidations.git</connection>
         <developerConnection>scm:git:git@github.com:PSDev/FormValidations.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>1.1.1</tag>
     </scm>
 
     <developers>
