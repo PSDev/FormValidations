@@ -22,9 +22,8 @@ import de.psdev.formvalidations.validations.IsEmail;
 import de.psdev.formvalidations.validations.NotEmpty;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -32,8 +31,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-@RunWith(RobolectricTestRunner.class)
-public class FormTest {
+public class FormTest extends BaseTest {
     private Activity mActivity;
     private Form mForm;
 

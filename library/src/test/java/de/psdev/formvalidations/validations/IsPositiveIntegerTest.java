@@ -18,10 +18,9 @@ package de.psdev.formvalidations.validations;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.robolectric.annotation.Config;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class IsPositiveIntegerTest extends BaseValidationTest {
 

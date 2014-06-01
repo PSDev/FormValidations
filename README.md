@@ -54,13 +54,13 @@ Download [the latest Release][1] or grab via Maven:
 <dependency>
   <groupId>de.psdev.formvalidations</groupId>
   <artifactId>formvalidations</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'de.psdev.formvalidations:formvalidations:1.1.0@aar'
+compile 'de.psdev.formvalidations:formvalidations:1.1.1@aar'
 ```
 
 Sample

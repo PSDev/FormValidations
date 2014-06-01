@@ -16,31 +16,11 @@
 
 package de.psdev.formvalidations;
 
-import android.app.Activity;
-import android.widget.TextView;
-import org.junit.Before;
-import org.junit.Test;
-import org.robolectric.Robolectric;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
-public class FormUtilsTest extends BaseTest {
-
-    private Activity mActivity;
-    private TextView mTextView;
-
-    @Before
-    public void setUp() throws Exception {
-        mActivity = Robolectric.buildActivity(Activity.class).create().get();
-        mTextView = new TextView(mActivity);
-    }
-
-    @Test
-    public void testShowKeyboard() throws Exception {
-        FormUtils.showKeyboard(mActivity, mTextView);
-    }
-
-    @Test
-    public void testHideKeyboard() throws Exception {
-        FormUtils.hideKeyboard(mActivity, mTextView);
-    }
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest = "src/test/resources/AndroidManifest.xml")
+public abstract class BaseTest {
 }

@@ -20,14 +20,12 @@ import android.app.Activity;
 import android.widget.EditText;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.*;
 
-@RunWith(RobolectricTestRunner.class)
-public class EditTextErrorHandlerTest {
+public class EditTextErrorHandlerTest extends BaseTest {
 
     private static final String ERROR_MESSAGE = "Error message";
 

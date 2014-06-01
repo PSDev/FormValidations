@@ -16,22 +16,17 @@
 
 package de.psdev.formvalidations;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
-
 import android.app.Activity;
 import android.widget.EditText;
 import de.psdev.formvalidations.validations.NotEmpty;
+import org.junit.Before;
+import org.junit.Test;
+import org.robolectric.Robolectric;
+import org.robolectric.annotation.Config;
 
-@RunWith(RobolectricTestRunner.class)
-public class FieldTest {
+import static org.junit.Assert.*;
+
+public class FieldTest extends BaseTest {
 
     private Activity mActivity;
 

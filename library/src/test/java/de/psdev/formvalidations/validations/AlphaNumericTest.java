@@ -18,9 +18,9 @@ package de.psdev.formvalidations.validations;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.*;
-
 
 public class AlphaNumericTest extends BaseValidationTest {
 

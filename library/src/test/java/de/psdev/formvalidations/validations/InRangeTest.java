@@ -17,6 +17,7 @@
 package de.psdev.formvalidations.validations;
 
 import org.junit.Test;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.*;
 

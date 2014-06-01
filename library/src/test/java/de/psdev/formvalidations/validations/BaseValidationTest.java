@@ -17,13 +17,11 @@
 package de.psdev.formvalidations.validations;
 
 import android.app.Activity;
+import de.psdev.formvalidations.BaseTest;
 import org.junit.Before;
-import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
 
-@RunWith(RobolectricTestRunner.class)
-public abstract class BaseValidationTest {
+public abstract class BaseValidationTest extends BaseTest {
 
     protected Activity mActivity;
 

@@ -68,37 +68,38 @@
         <android.sdk.platform>16</android.sdk.platform>
 
         <!-- Dependency Versions -->
-        <robolectric.version>2.2</robolectric.version>
         <junit.version>4.11</junit.version>
+        <robolectric.version>2.3</robolectric.version>
         <android.version>4.1.1.4</android.version>
         <support-v4.version>r7</support-v4.version>
-        <crouton.version>1.8.1</crouton.version>
         <jsr305.version>2.0.3</jsr305.version>
-        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <butterknife.version>5.1.0</butterknife.version>
+        <slf4j-api.version>1.7.7</slf4j-api.version>
 
         <!-- Plugin Versions -->
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <android-maven-plugin.version>3.8.2</android-maven-plugin.version>
+        <android-maven-plugin.version>3.9.0-rc.2</android-maven-plugin.version>
         <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
-        <maven-release-plugin.version>2.4.2</maven-release-plugin.version>
+        <maven-release-plugin.version>2.5</maven-release-plugin.version>
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <jacoco-maven-plugin.version>0.7.1.201405082137</jacoco-maven-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
-        <jacoco-maven-plugin.version>0.6.4.201312101107</jacoco-maven-plugin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <!-- Testing -->
             <dependency>
-                <groupId>org.robolectric</groupId>
-                <artifactId>robolectric</artifactId>
-                <version>${robolectric.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.robolectric</groupId>
+                <artifactId>robolectric</artifactId>
+                <version>${robolectric.version}</version>
                 <scope>test</scope>
             </dependency>
 
@@ -125,7 +126,7 @@
             <dependency>
                 <groupId>com.jakewharton</groupId>
                 <artifactId>butterknife</artifactId>
-                <version>4.0.1</version>
+                <version>${butterknife.version}</version>
             </dependency>
 
             <!-- Logging -->
@@ -134,7 +135,6 @@
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
             </dependency>
-
 
         </dependencies>
     </dependencyManagement>
