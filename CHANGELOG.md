@@ -4,6 +4,8 @@ Change Log
 Version 1.1.2 *(IN DEVELOPMENT)*
 --------------------------------
 
+* Updated dependencies
+
 Version 1.1.1 *(2014-06-01)*
 ----------------------------
 

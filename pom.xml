@@ -69,20 +69,19 @@
 
         <!-- Dependency Versions -->
         <junit.version>4.11</junit.version>
-        <robolectric.version>2.3</robolectric.version>
+        <robolectric.version>2.4</robolectric.version>
         <android.version>4.1.1.4</android.version>
         <support-v4.version>r7</support-v4.version>
-        <jsr305.version>2.0.3</jsr305.version>
-        <butterknife.version>5.1.0</butterknife.version>
+        <jsr305.version>3.0.0</jsr305.version>
+        <butterknife.version>6.0.0</butterknife.version>
         <slf4j-api.version>1.7.7</slf4j-api.version>
 
         <!-- Plugin Versions -->
-        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <android-maven-plugin.version>3.9.0-rc.2</android-maven-plugin.version>
-        <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
-        <maven-release-plugin.version>2.5</maven-release-plugin.version>
-        <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
-        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
+        <android-maven-plugin.version>4.0.0-rc.2</android-maven-plugin.version>
+        <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
+        <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
         <jacoco-maven-plugin.version>0.7.1.201405082137</jacoco-maven-plugin.version>
         <maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
     </properties>
@@ -176,6 +175,11 @@
                         <lintEnableHtml>true</lintEnableHtml>
                         <lintConfig>${project.basedir}/lint.xml</lintConfig>
                         <lintSkip>false</lintSkip>
+                        <!-- Use old Paths for now -->
+                        <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
+                        <updatedManifestFile>${project.basedir}/AndroidManifest.xml</updatedManifestFile>
+                        <resourceDirectory>${project.basedir}/res</resourceDirectory>
+                        <assetsDirectory>${project.basedir}/assets</assetsDirectory>
                     </configuration>
                 </plugin>
 
