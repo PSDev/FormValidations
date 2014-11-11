@@ -1,4 +1,5 @@
-FormValidations [![Build Status](http://ci.psdev.de/job/PSDevFormValidations/badge/icon)](http://ci.psdev.de/job/PSDevFormValidations/)
+FormValidations [![Build Status](http://ci.psdev.de/job/PSDevFormValidations/badge/icon)](http://ci.psdev.de/job/PSDevFormValidations/) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
+
 ===============
 
 FormValidations is an open source library to validate forms in Android apps.
