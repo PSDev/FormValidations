@@ -1,4 +1,4 @@
-FormValidations [![Build Status](http://ci.psdev.de/job/PSDevFormValidations/badge/icon)](http://ci.psdev.de/job/PSDevFormValidations/) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
+FormValidations [![Build Status](httpd://ci.psdev.de/job/PSDevFormValidations/badge/icon)](httpd://ci.psdev.de/job/PSDevFormValidations/) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
 
 ===============
 
