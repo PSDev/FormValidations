@@ -52,8 +52,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import de.psdev.formvalidations.EditTextErrorHandler;
 import de.psdev.formvalidations.Field;
 import de.psdev.formvalidations.Form;
@@ -62,19 +62,18 @@ import de.psdev.formvalidations.validations.InRange;
 import de.psdev.formvalidations.validations.IsEmail;
 import de.psdev.formvalidations.validations.NotEmpty;
 
-
 public class SampleActivity extends Activity {
 
     private static final String GITHUB_PAGE = "https://github.com/PSDev/FormValidations";
 
     // View injections
-    @InjectView(R.id.name)
+    @Bind(R.id.name)
     EditText mName;
-    @InjectView(R.id.email)
+    @Bind(R.id.email)
     EditText mEmail;
-    @InjectView(R.id.age)
+    @Bind(R.id.age)
     EditText mAge;
-    @InjectView(R.id.submit)
+    @Bind(R.id.submit)
     Button mSubmit;
 
     // Form used for validation
@@ -108,7 +107,7 @@ public class SampleActivity extends Activity {
     }
 
     private void initFields() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     private void initValidationForm() {
@@ -121,6 +120,7 @@ public class SampleActivity extends Activity {
 
     private void initCallbacks() {
         mAge.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
             @Override
             public boolean onEditorAction(final TextView view, final int actionId, final KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -133,6 +133,7 @@ public class SampleActivity extends Activity {
         });
 
         mSubmit.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(final View view) {
                 submit();

@@ -1,9 +1,11 @@
 Change Log
 ==========
 
-Version 1.1.2 *(IN DEVELOPMENT)*
+Version 1.1.2 *(2016-04-23)*
 --------------------------------
 
+* **minSdkVersion is now 8**
+* Added spanish translation (#4)
 * Updated dependencies
 
 Version 1.1.1 *(2014-06-01)*

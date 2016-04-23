@@ -20,8 +20,8 @@
     package="de.psdev.formvalidations.sample">
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="23" />
 
     <application
         android:icon="@drawable/ic_launcher"

@@ -20,7 +20,9 @@ import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
+import android.os.Build;
+
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = "src/test/resources/AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public abstract class BaseTest {
 }

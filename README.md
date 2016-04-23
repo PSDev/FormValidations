@@ -55,13 +55,13 @@ Download [the latest Release][1] or grab via Maven:
 <dependency>
   <groupId>de.psdev.formvalidations</groupId>
   <artifactId>formvalidations</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'de.psdev.formvalidations:formvalidations:1.1.1@aar'
+compile 'de.psdev.formvalidations:formvalidations:1.1.2'
 ```
 
 Sample
@@ -73,6 +73,13 @@ Credits
 -------
 
 This library is based on [z-validations][3] by [Vitaliy Zasadnyy][4].
+
+Contributors
+------------
+
+Thank you to all the contributors of this project, namely:
+
+- [Cristian Hernandez](https://github.com/PSDev/LicensesDialog/commits?author=devcodaltec)
 
 License
 -------
