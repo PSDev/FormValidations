@@ -60,8 +60,9 @@ public class Form {
         mFields = new ArrayList<Field>();
     }
 
-    public void addField(final Field field) {
+    public Form addField(final Field field) {
         mFields.add(field);
+        return this;
     }
 
     public Form errorHandler(final FormErrorHandler handler) {
@@ -84,7 +85,6 @@ public class Form {
             textView.selectAll();
 
             FormUtils.showKeyboard(textView.getContext(), textView);
-
 
             showErrorMessage(e);
         }
