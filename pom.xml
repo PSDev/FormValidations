@@ -191,7 +191,7 @@
 
                         <!-- Lint -->
                         <lintEnableLibraries>true</lintEnableLibraries>
-                        <lintFailOnError>true</lintFailOnError>
+                        <lintFailOnError>false</lintFailOnError>
                         <lintEnableHtml>true</lintEnableHtml>
                         <lintConfig>${project.basedir}/lint.xml</lintConfig>
                         <lintSkip>false</lintSkip>
