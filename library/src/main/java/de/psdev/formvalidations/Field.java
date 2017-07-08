@@ -39,11 +39,10 @@
 
 package de.psdev.formvalidations;
 
-import android.widget.EditText;
-
 import java.util.LinkedList;
 import java.util.List;
 
+import android.widget.EditText;
 import de.psdev.formvalidations.validations.Validation;
 
 public class Field {
@@ -58,7 +57,7 @@ public class Field {
         return new Field(editText);
     }
 
-    private Field(final EditText editText) {
+    protected Field(final EditText editText) {
         mEditText = editText;
         mValidations = new LinkedList<Validation>();
     }
