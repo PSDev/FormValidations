@@ -1,0 +1,4 @@
+rootProject.name = "formvalidations-parent"
+
+include ':formvalidations'
+include ':sample'

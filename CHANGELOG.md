@@ -1,8 +1,15 @@
 Change Log
 ==========
 
-Version 1.1.2 *(2016-04-23)*
+Version 1.2.0 *(IN DEVELOPMENT)*
 --------------------------------
+
+* **CHANGED**: minSdkVersion is now 14
+* **CHANGED**: Converted project to Gradle
+* **CHANGED**: Compile with Java 8 syntax
+
+Version 1.1.2 *(2016-04-23)*
+----------------------------
 
 * **minSdkVersion is now 8**
 * Added spanish translation (#4)
@@ -14,7 +21,7 @@ Version 1.1.1 *(2014-06-01)*
 * Updated dependencies
 
 Version 1.1.0 *(2014-02-02)*
---------------------------------
+----------------------------
 
 * **Switched to aar packaging**
 

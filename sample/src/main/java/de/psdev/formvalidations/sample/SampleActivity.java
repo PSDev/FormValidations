@@ -43,16 +43,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.psdev.formvalidations.EditTextErrorHandler;
 import de.psdev.formvalidations.Field;
@@ -67,13 +64,13 @@ public class SampleActivity extends Activity {
     private static final String GITHUB_PAGE = "https://github.com/PSDev/FormValidations";
 
     // View injections
-    @Bind(R.id.name)
+    @BindView(R.id.name)
     EditText mName;
-    @Bind(R.id.email)
+    @BindView(R.id.email)
     EditText mEmail;
-    @Bind(R.id.age)
+    @BindView(R.id.age)
     EditText mAge;
-    @Bind(R.id.submit)
+    @BindView(R.id.submit)
     Button mSubmit;
 
     // Form used for validation
@@ -119,26 +116,15 @@ public class SampleActivity extends Activity {
     }
 
     private void initCallbacks() {
-        mAge.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(final TextView view, final int actionId, final KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    submit();
-                    return true;
-                }
-                return false;
-            }
-
-        });
-
-        mSubmit.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(final View view) {
+        mAge.setOnEditorActionListener((view, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 submit();
+                return true;
             }
+            return false;
         });
+
+        mSubmit.setOnClickListener(view -> submit());
     }
 
     private void submit() {
