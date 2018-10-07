@@ -1,8 +1,8 @@
 Change Log
 ==========
 
-Version 1.2.0 *(IN DEVELOPMENT)*
---------------------------------
+Version 1.2.0 *(2018-10-07)*
+----------------------------
 
 * **CHANGED**: minSdkVersion is now 14
 * **CHANGED**: Converted project to Gradle
