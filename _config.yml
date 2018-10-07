@@ -1,0 +1,8 @@
+title: FormValidations
+description: FormValidations is an open source library to validate forms in Android apps.
+google_analytics: UA-74654-28
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
