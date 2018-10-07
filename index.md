@@ -1,5 +1,7 @@
-FormValidations [![Build Status](https://ci.psdev.de/job/PSDevFormValidations/badge/icon)](https://ci.psdev.de/job/PSDevFormValidations/) [![Coverage](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=coverage)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Lines of Code](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=ncloc)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
+FormValidations
 ===============
+
+[![Build Status](https://ci.psdev.de/job/PSDevFormValidations/badge/icon)](https://ci.psdev.de/job/PSDevFormValidations/) [![Coverage](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=coverage)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Lines of Code](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=ncloc)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
 
 FormValidations is an open source library to validate forms in Android apps.
 
