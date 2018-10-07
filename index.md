@@ -1,5 +1,4 @@
-FormValidations [![Build Status](http://ci.psdev.de/job/PSDevFormValidations/badge/icon)](http://ci.psdev.de/job/PSDevFormValidations/) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
-
+FormValidations [![Build Status](https://ci.psdev.de/job/PSDevFormValidations/badge/icon)](https://ci.psdev.de/job/PSDevFormValidations/) [![Coverage](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=coverage)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Lines of Code](https://sonar.psdev.de/api/project_badges/measure?project=de.psdev.formvalidations&metric=ncloc)](https://sonar.psdev.de/dashboard?id=de.psdev.formvalidations) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.psdev.formvalidations/formvalidations)
 ===============
 
 FormValidations is an open source library to validate forms in Android apps.
@@ -55,13 +54,13 @@ Download [the latest Release][1] or grab via Maven:
 <dependency>
   <groupId>de.psdev.formvalidations</groupId>
   <artifactId>formvalidations</artifactId>
-  <version>1.1.1</version>
+  <version>1.2.0</version>
   <type>aar</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-compile 'de.psdev.formvalidations:formvalidations:1.1.1@aar'
+implementation 'de.psdev.formvalidations:formvalidations:1.2.0'
 ```
 
 Sample
@@ -73,6 +72,13 @@ Credits
 -------
 
 This library is based on [z-validations][3] by [Vitaliy Zasadnyy][4].
+
+Contributors
+------------
+
+Thank you to all the contributors of this project, namely:
+
+- [Cristian Hernandez](https://github.com/PSDev/FormValidations/commits?author=devcodaltec)
 
 License
 -------
@@ -115,6 +121,6 @@ License
     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [1]: https://github.com/PSDev/FormValidations/releases
-[2]: https://ci.psdev.de/job/PSDevFormValidations/lastSuccessfulBuild/artifact/sample/target/
+[2]: https://ci.psdev.de/job/PSDevFormValidations/lastSuccessfulBuild/artifact/sample/build/outputs/apk/debug/
 [3]: https://github.com/zasadnyy/z-validations
 [4]: http://about.me/vitaliy.zasadnyy
